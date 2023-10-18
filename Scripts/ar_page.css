@@ -73,7 +73,7 @@
     border-radius: 5px;
     cursor: pointer;
     z-index: 11; /* Ensure the button is always on top */
-    background: url("../Assets/Back-button.svg") no-repeat center center;
+    background: url("./Assets/Back-button.svg") no-repeat center center;
     background-size: contain;
     background-color: transparent;
 }
