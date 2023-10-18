@@ -3,17 +3,24 @@ document.addEventListener('DOMContentLoaded', function () {
     init: function () {
         // Get references to the necessary DOM elements
         const target = document.getElementById("target");
+        const secondTarget = document.getElementById("secondTarget");
         const video = document.getElementById("video");
-        const audio = document.getElementById("backgroundAudio");
-        const plane = document.getElementById("videooverlay");
-        const startText = document.getElementById("startText");
+        const video2 = document.getElementById("video2");
+        const audioButton = document.getElementById("audioButton");
         const audioPrompt = document.getElementById("audioPrompt");
+        const audioPromptIcon = document.getElementById("audioPromptIcon");
+        const plane = document.getElementById("videooverlay");
+        const plane2 = document.getElementById("videooverlay2");
+        const startText = document.getElementById("startText");
+        
         const backgroundImage = document.getElementById("background");
         const backButton = document.getElementById("backButton");
 
         // Initialize variables
         var played = false;
+        var played2 = false;
         var userInteracted = false;
+        var isMuted = true;
 
         // Function to check if the device is iOS
         function isIOS() {
@@ -29,50 +36,88 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Event listener for audio prompt button click
-        audioPrompt.addEventListener("click", () => {
-            audio.play();
-            audioPrompt.style.display = "none";
-            userInteracted = true;
+        // audioPrompt.addEventListener("click", () => {
+        //     // audio.play();
+        //     audioPrompt.style.display = "none";
+        //     userInteracted = true;
+        // });
+      
+        audioButton.addEventListener("click", () => {
+            isMuted = !isMuted;  // Toggle mute status
+            video.muted = isMuted;
+            video2.muted = isMuted;
+            if (isMuted) {
+                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Enable Audio';
+            } else {
+                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Disable Audio';
+            }
         });
 
-        // Event listener for target found event
+        // Event listener for first target found event
         target.addEventListener("targetFound", () => {
-            console.log("target found");
+            console.log("target 1 found");
             this.found = true;
+            audioPrompt.style.display = "block";
             if (!played) {
                 startText.style.display = "none";
                 backgroundImage.style.display = "none";
-                if (audio.paused && isIOS() && !userInteracted) {
-                    audioPrompt.style.display = "block";
-                } else {
-                    audio.play();
-                }
                 plane.emit("fadein");
                 video.play();
                 video.addEventListener("ended", function videoend(e) {
                     played = true;
                 }, false);
                 plane.object3D.position.copy(plane.object3D.position);
-            } else if (audio.paused) {
-                audio.play();
+
             }
         });
 
         // Event listener for target lost event
         target.addEventListener("targetLost", () => {
-            console.log("target lost");
+            console.log("target 1 lost");
+            audioPrompt.style.display = "block";
             this.found = false;
             if (!played) {
                 video.pause();
-                audio.pause();
+                // audio.pause();
+                startText.style.display = "block";
+                backgroundImage.style.display = "block";
+            }
+        });
+    
+        // Event listener for second target found event
+        secondTarget.addEventListener("targetFound", () => {
+            console.log("target 2 found");
+            audioPrompt.style.display = "block";
+            this.found2 = true;
+            if (!played) {
+                startText.style.display = "none";
+                backgroundImage.style.display = "none";
+                plane2.emit("fadein");
+                video2.play();
+                video2.addEventListener("ended", function videoend(e) {
+                    played2 = true;
+                }, false);
+                plane.object3D.position.copy(plane.object3D.position);
+            }
+        });
+
+        // Event listener for second target lost event
+        secondTarget.addEventListener("targetLost", () => {
+            console.log("target 2 lost");
+            audioPrompt.style.display = "block";
+            this.found2 = false;
+            if (!played) {
+                video2.pause();
                 startText.style.display = "block";
                 backgroundImage.style.display = "block";
             }
         });
 
+      
+      
         // Event listener for arframe event
         this.el.addEventListener("arframe", () => {
-            if (!this.found && played) {
+            if (!this.found && !this.found2 && played) {
                 plane.object3D.position.copy(plane.object3D.position);
             }
         });
