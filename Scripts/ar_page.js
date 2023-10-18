@@ -134,6 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);  // Delay of 3000ms (3 seconds)
 
         window.addEventListener("orientationchange", () => {
+          location.reload();
           startText.style.display = "block";
           backgroundImage.style.display = "block";
           this.found = false;
