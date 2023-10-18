@@ -132,6 +132,15 @@ document.addEventListener('DOMContentLoaded', function () {
             startText.style.display = "block";
             backgroundImage.style.display = "block";
         }, 3000);  // Delay of 3000ms (3 seconds)
+
+        window.addEventListener("orientationchange", () => {
+          startText.style.display = "block";
+          backgroundImage.style.display = "block";
+          this.found = false;
+          this.found2 = false;
+          played = false;
+          played2 = false;
+        });
     },
   });
 });
