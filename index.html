@@ -25,8 +25,8 @@
     
     <!-- Image of the painting -->
 <div class="image-container"> 
-    <img id="image" src=".\Assets\LHsm.png" alt="Maha Ahmed artwork">
-    <img id="image" src=".\Assets\LH2sm.png" alt="Maha Ahmed artwork2">
+    <img id="image" src=".\Assets\LHsm.png" alt="Maha Ahmed artwork" class="fade-image" id="image1">
+    <img id="image" src=".\Assets\LH2sm.png" alt="Maha Ahmed artwork2" class="fade-image" id="image2">
 </div>
   
     <!-- Description of the AR experience -->
@@ -37,6 +37,26 @@
     
     <!-- Button to start the AR experience -->
     <button id="startButton" onclick="location.href='AR_page.html';">GET STARTED</button>
+<script>
+        let toggle = true;
+
+        setInterval(function() {
+            let image1 = document.getElementById('image1');
+            let image2 = document.getElementById('image2');
+
+            if (toggle) {
+                image1.style.opacity = '0';
+                image2.style.opacity = '1';
+            } else {
+                image1.style.opacity = '1';
+                image2.style.opacity = '0';
+            }
+
+            toggle = !toggle;
+        }, 5000); // 5000ms = 5s
+    </script>
+</body>
+</html>
 </body>
 </html>
 
