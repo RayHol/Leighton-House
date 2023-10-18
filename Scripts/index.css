@@ -60,8 +60,8 @@ body {
 }
 .image-container {
   position: relative;
-  width: 300px; /* Set your own dimensions */
-  height: 300px; /* Set your own dimensions */
+  width: 300px; 
+  height: 300px; 
 }
 
 .fade-image {
@@ -76,5 +76,9 @@ body {
 
 #image1 {
   opacity: 1;
+}
+
+#image2 {
+  opacity: 0;
 }
 
