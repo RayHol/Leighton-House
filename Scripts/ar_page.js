@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
             video.muted = isMuted;
             video2.muted = isMuted;
             if (isMuted) {
-                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/unmute-icon.svg" alt="Audio Icon"> Enable Audio';
+                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Enable Audio';
             } else {
                 audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Disable Audio';
             }
