@@ -49,8 +49,8 @@
     position: fixed;
     top: 50%;
     left: 50%;
-    width: 221px;
-    height: 175px;
+    width: 280px;
+    height: 222px;
     transform: translate(-50%, -50%);
     z-index: 9;
     background: url("../Assets/LH2up.png") no-repeat center center fixed; 
@@ -73,7 +73,7 @@
     border-radius: 5px;
     cursor: pointer;
     z-index: 11; /* Ensure the button is always on top */
-    background: url("./Assets/Back-button.svg") no-repeat center center;
+    background: url("../Assets/Back-button.svg") no-repeat center center;
     background-size: contain;
     background-color: transparent;
 }
