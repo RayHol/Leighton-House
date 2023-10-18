@@ -134,13 +134,9 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 3000);  // Delay of 3000ms (3 seconds)
 
         window.addEventListener("orientationchange", () => {
-            // Reload the page
+          // Reload the page
             location.reload();
-            
-            // Update debug log
-            const debugLog = document.getElementById("debugLog");
-            debugLog.innerHTML += "Orientation changed<br>";
-          });
+        });
     },
   });
 });
