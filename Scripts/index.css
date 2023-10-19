@@ -15,14 +15,14 @@ body {
 #logo {
     max-width: 101px;
     max-height: 48px;
-    margin: 16px auto;
+    margin: 10px auto;
     padding: 16px;  
 }
 
 
 #description {
     margin-top: 16px;
-    max-width: 90%;
+    max-width: 100%;
     font-family: 'Poppins', sans-serif;
     font-style: normal;
     font-weight: 400;
