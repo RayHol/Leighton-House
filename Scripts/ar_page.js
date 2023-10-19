@@ -70,7 +70,7 @@ document.addEventListener('DOMContentLoaded', function () {
             audioPrompt.style.display = "block";
             if (!played) {
                 startText.style.display = "none";
-                backgroundImage.style.display = "none";
+                // backgroundImage.style.display = "none";
                 plane.emit("fadein");
                 video.play();
                 video.addEventListener("ended", function videoend(e) {
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 video.pause();
                 // audio.pause();
                 startText.style.display = "block";
-                backgroundImage.style.display = "block";
+                // backgroundImage.style.display = "block";
             }
         });
     
@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function () {
             this.found2 = true;
             if (!played) {
                 startText.style.display = "none";
-                backgroundImage.style.display = "none";
+                // backgroundImage.style.display = "none";
                 plane2.emit("fadein");
                 video2.play();
                 video2.addEventListener("ended", function videoend(e) {
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (!played) {
                 video2.pause();
                 startText.style.display = "block";
-                backgroundImage.style.display = "block";
+                // backgroundImage.style.display = "block";
             }
         });
 
@@ -147,16 +147,16 @@ document.addEventListener('DOMContentLoaded', function () {
           // Reload the page
             location.reload();
         });
-        let scene = document.querySelector("a-scene");
-        scene.addEventListener("loaded", function () {
-          console.log("Scene loaded");
-          let customLoadingScreen = document.getElementById("customLoadingScreen");
-          let defaultLoadingScreen = document.getElementById("loading-screen");
-          console.log("Before hiding: ", customLoadingScreen, defaultLoadingScreen);
-          customLoadingScreen.style.display = 'none';
-          defaultLoadingScreen.style.display = "none";
-          console.log("After hiding: ", customLoadingScreen, defaultLoadingScreen);
-        });
+        // let scene = document.querySelector("a-scene");
+        // scene.addEventListener("loaded", function () {
+        //   console.log("Scene loaded");
+        //   let customLoadingScreen = document.getElementById("customLoadingScreen");
+        //   let defaultLoadingScreen = document.getElementById("loading-screen");
+        //   console.log("Before hiding: ", customLoadingScreen, defaultLoadingScreen);
+        //   customLoadingScreen.style.display = 'none';
+        //   defaultLoadingScreen.style.display = "none";
+        //   console.log("After hiding: ", customLoadingScreen, defaultLoadingScreen);
+        // });
 
     },
   });
