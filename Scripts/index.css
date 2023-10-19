@@ -33,7 +33,7 @@ body {
 
 #image {
     width: 100%;  /* adjust this as necessary */
-    max-width: 278px; /* this means it won't get bigger than 327px */
+    max-width: 327px; /* this means it won't get bigger than 327px */
     height: auto; /* keep the aspect ratio */
     margin: 0 auto;
     border: none;
@@ -64,7 +64,7 @@ body {
 .image-container {
   position: relative;
   width: 278px;
-  height: auto; 
+  height: 220px; 
   min-height: 327px;
 }
 
