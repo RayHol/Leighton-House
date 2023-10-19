@@ -65,7 +65,7 @@ body {
   position: relative;
   width: 278px;
   height: 220px; 
-  min-height: 220px;
+/*   min-height: 220px; */
 }
 
 .fade-image {
