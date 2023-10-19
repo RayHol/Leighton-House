@@ -33,7 +33,7 @@ body {
 
 #image {
     width: 100%;  /* adjust this as necessary */
-    max-width: auto; /* this means it won't get bigger than 327px */
+    max-width: 278px; /* this means it won't get bigger than 327px */
     height: 220px; /* keep the aspect ratio */
     margin: 0 auto;
     border: none;
@@ -63,9 +63,9 @@ body {
 }
 .image-container {
   position: relative;
-  width: auto;
+  width: 278px;
   height: 220px; 
-  min-height: 300px;
+  min-height: 220px;
 }
 
 .fade-image {
