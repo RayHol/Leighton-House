@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function () {
             if (isMuted) {
                 audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Enable Audio';
             } else {
-                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/unmute-icon.svg" alt="Audio Icon"> Disable Audio';
+                audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Disable Audio';
             }
         });
 
@@ -147,16 +147,16 @@ document.addEventListener('DOMContentLoaded', function () {
           // Reload the page
             location.reload();
         });
-        let scene = document.querySelector("a-scene");
-        scene.addEventListener("loaded", function () {
-          console.log("Scene loaded");
-          let customLoadingScreen = document.getElementById("customLoadingScreen");
-          let defaultLoadingScreen = document.getElementById("loading-screen");
-          console.log("Before hiding: ", customLoadingScreen, defaultLoadingScreen);
-          customLoadingScreen.style.display = 'none';
-          defaultLoadingScreen.style.display = "none";
-          console.log("After hiding: ", customLoadingScreen, defaultLoadingScreen);
-        });
+        // let scene = document.querySelector("a-scene");
+        // scene.addEventListener("loaded", function () {
+        //   console.log("Scene loaded");
+        //   let customLoadingScreen = document.getElementById("customLoadingScreen");
+        //   let defaultLoadingScreen = document.getElementById("loading-screen");
+        //   console.log("Before hiding: ", customLoadingScreen, defaultLoadingScreen);
+        //   customLoadingScreen.style.display = 'none';
+        //   defaultLoadingScreen.style.display = "none";
+        //   console.log("After hiding: ", customLoadingScreen, defaultLoadingScreen);
+        // });
 
     },
   });
