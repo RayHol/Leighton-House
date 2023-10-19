@@ -28,9 +28,35 @@
     
     <!-- Include the custom CSS file for styling -->
     <link rel="stylesheet" href=".\Scripts\ar_page.css">
+    
+    <style>
+        #loading-screen {
+            position: fixed;
+            width: 100vw;
+            height: 100vh;
+            top: 0;
+            left: 0;
+            z-index: 9999;
+            background-color: rgba(0,0,0,0.85);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+  
 </head>
 
 <body>
+    <!-- Custom Loading Screen -->
+    <div id="loading-screen">Loading...</div>
+    <!-- Custom Loading Spinner Container -->
+    <div id="customLoadingScreen" class="spinner-container">
+        <div class="lds-roller">
+            <div></div><div></div><div></div><div></div>
+            <div></div><div></div><div></div><div></div>
+        </div>
+    </div>
     <!-- Background container -->
     <div id="background"></div>
     
@@ -50,12 +76,13 @@
 
     <!-- A-Frame scene container -->
     <a-scene
+        loading-screen="enabled: false"
         mindar-image="imageTargetSrc: .\Assets\LHtargets.mind; warmupTolerance: 10; missTolerance: 1; filterMinCF: 0.0001; filterBeta: 0.001"
         color-space="sRGB"
         renderer="colorManagement: true, physicallyCorrectLights"
         vr-mode-ui="enabled: false"
         device-orientation-permission-ui="enabled: false"
-        loading-screen="enabled: false"
+        
     >
         <!-- Asset container -->
         <a-assets>
@@ -69,7 +96,7 @@
             </video>
             
             <!-- Background audio asset -->
-            <audio id="backgroundAudio" src="./Assets/background_2.mp3" preload="auto" loop crossorigin="anonymous"></audio>
+<!--             <audio id="backgroundAudio" src="./Assets/background_2.mp3" preload="auto" loop crossorigin="anonymous"></audio> -->
         </a-assets>
 
         <!-- Camera entity -->
@@ -96,6 +123,14 @@
                 animation__fadeout="startEvents: fadeout; property: material.opacity; from: 1; to: 0; dur: 500;"></a-plane>
         </a-entity>
     </a-scene>
+  
+    <script>
+        // Remove the loading screen once the page is fully loaded
+        window.addEventListener("load", function() {
+            var loadingScreen = document.getElementById("loading-screen");
+            loadingScreen.style.display = "none";
+        });
+    </script>
 </body>
 
 </html>

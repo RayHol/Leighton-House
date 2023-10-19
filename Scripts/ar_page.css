@@ -1,3 +1,22 @@
+.hidden {
+    visibility: hidden !important;
+}
+.spinner-container.hidden {
+    visibility: hidden !important;
+}
+.spinner-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 #startText, #audioPrompt {
     position: fixed;
     top: 20%;
