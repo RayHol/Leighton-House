@@ -63,9 +63,9 @@ body {
 }
 .image-container {
   position: relative;
-  width: 278px;
+  width: auto;
   height: 220px; 
-  min-height: 300px;
+  min-height: 327px;
 }
 
 .fade-image {
