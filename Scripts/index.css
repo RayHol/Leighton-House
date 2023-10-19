@@ -9,7 +9,7 @@ body {
     color: #000000;
     text-align: center;
     font-family:'Poppins' , sans-serif;
-    margin-top: 24;    
+    margin-top: 10;    
 }
 
 #logo {
@@ -33,8 +33,8 @@ body {
 
 #image {
     width: 100%;  /* adjust this as necessary */
-    max-width: 327px; /* this means it won't get bigger than 327px */
-    height: auto; /* keep the aspect ratio */
+    max-width: 278px; /* this means it won't get bigger than 327px */
+    height: 220px; /* keep the aspect ratio */
     margin: 0 auto;
     border: none;
     border-radius: 8px;
