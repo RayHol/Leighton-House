@@ -46,14 +46,22 @@ document.addEventListener('DOMContentLoaded', function () {
       
         audioButton.addEventListener("click", () => {
             isMuted = !isMuted;  // Toggle mute status
+            let wasVideoPlaying = !video.paused;
+            let wasVideo2Playing = !video2.paused;
+
             video.muted = isMuted;
             video2.muted = isMuted;
+
+            if (wasVideoPlaying) video.play();
+            if (wasVideo2Playing) video2.play();
+
             if (isMuted) {
                 audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Enable Audio';
             } else {
                 audioButton.innerHTML = '<img id="audioPromptIcon" src="./Assets/mute-icon.svg" alt="Audio Icon"> Disable Audio';
             }
         });
+
 
         // Event listener for first target found event
         target.addEventListener("targetFound", () => {
