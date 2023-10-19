@@ -37,7 +37,50 @@
     
     <!-- Button to start the AR experience -->
     <button id="startButton" onclick="location.href='AR_page.html';">GET STARTED</button>
-<script>
+
+<!-- JavaScript for resizing -->
+<!--     <script>
+        function resizeImages() {
+              const imageContainer = document.querySelector('.image-container');
+              const fadeImages = document.querySelectorAll('.fade-image');
+
+              if (window.innerWidth > window.innerHeight) {
+                  // Landscape mode
+                  let size = window.innerHeight * 0.7; // 70% of viewport height
+                  imageContainer.style.width = `${size}px`;
+                  imageContainer.style.height = "auto";
+                  imageContainer.style.minHeight = `${size}px`;  // Add this line
+
+                  fadeImages.forEach((img) => {
+                      img.style.width = '100%';
+                      img.style.height = 'auto';
+                  });
+              } else {
+                  // Portrait mode
+                  imageContainer.style.width = '300px';
+                  imageContainer.style.height = 'auto';
+                  imageContainer.style.minHeight = '300px';  // Add this line
+
+                  fadeImages.forEach((img) => {
+                      img.style.width = '100%';
+                      img.style.height = 'auto';
+                  });
+              }
+          }
+
+        // Initial call
+        resizeImages();
+
+        // Attach the function to resize event
+        window.addEventListener('resize', resizeImages);
+
+        // Attach the function to orientationchange event with a delay
+        window.addEventListener('orientationchange', function() {
+            setTimeout(resizeImages, 200);
+        });
+    </script> -->
+  <!-- JavaScript for image fading -->
+    <script>
         let toggle = true;
 
         setInterval(function() {
@@ -57,8 +100,7 @@
     </script>
 </body>
 </html>
-</body>
-</html>
+
 
 
 
