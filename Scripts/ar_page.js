@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', function () {
   AFRAME.registerComponent("ar-controller", {
     init: function () {
+        // Disable A-Frame's default loading screen
+        this.el.sceneEl.setAttribute('loading-screen', 'enabled', false);
         // Get references to the necessary DOM elements
         const target = document.getElementById("target");
         const secondTarget = document.getElementById("secondTarget");
@@ -137,6 +139,17 @@ document.addEventListener('DOMContentLoaded', function () {
           // Reload the page
             location.reload();
         });
+        let scene = document.querySelector("a-scene");
+        scene.addEventListener("loaded", function () {
+          console.log("Scene loaded");
+          let customLoadingScreen = document.getElementById("customLoadingScreen");
+          let defaultLoadingScreen = document.getElementById("loading-screen");
+          console.log("Before hiding: ", customLoadingScreen, defaultLoadingScreen);
+          customLoadingScreen.style.display = 'none';
+          defaultLoadingScreen.style.display = "none";
+          console.log("After hiding: ", customLoadingScreen, defaultLoadingScreen);
+        });
+
     },
   });
 });
