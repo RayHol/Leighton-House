@@ -4,11 +4,13 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    padding: 20px;  
+    padding: 240px;  
     background-color: #ffffff;
     color: #000000;
     text-align: center;
     font-family:'Poppins' , sans-serif;
+    margin-top: 0;
+    
 }
 
 #logo {
@@ -42,6 +44,8 @@ body {
 #startButton {
     display: block;
     margin: 32px auto;
+    margin-top: 32px;
+    margin-bottom: 32px; 
     padding: 0px 16px;
     width: 327px;
     height: 44px;
@@ -63,6 +67,7 @@ body {
   width: 300px; 
   height: 300px; 
   min-height: 300px;
+    margin-bottom: 16px
 }
 
 .fade-image {
