@@ -33,8 +33,8 @@ body {
 
 #image {
     width: 100%;  /* adjust this as necessary */
-    max-width: 327px; /* this means it won't get bigger than 327px */
-    height: auto; /* keep the aspect ratio */
+    max-width: auto; /* this means it won't get bigger than 327px */
+    height: 220px; /* keep the aspect ratio */
     margin: 0 auto;
     border: none;
     border-radius: 8px;
